@@ -8,7 +8,8 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss",
-          "skipTests": true
+          "skipTests": true,
+          "changeDetection": "OnPush"
         },
         "@schematics/angular:class": {
           "skipTests": true
@@ -54,6 +55,7 @@
               }
             ],
             "styles": [
+              "src/styles/normalize.scss",
               "src/styles.scss"
             ],
             "scripts": []
@@ -113,6 +115,7 @@
               }
             ],
             "styles": [
+              "src/styles/normalize.scss",
               "src/styles.scss"
             ],
             "scripts": []
@@ -120,5 +123,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "034c28ab-6544-4e3d-8c41-cb4a85f451e6"
   }
 }

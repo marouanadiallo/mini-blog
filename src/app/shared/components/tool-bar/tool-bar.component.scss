@@ -1,0 +1,38 @@
+:host{
+    display: block;
+}
+
+.toolbar {
+    background-color: #004990;
+    color: white;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav {
+        display: flex;
+        align-items: center;
+
+        .nav-item {
+            margin-right: 1rem;
+            cursor: pointer;
+            border: 1px solid transparent;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            text-transform: uppercase;
+            font-size: large;
+            background-color: rgba($color: #fff, $alpha: .07);
+            transition: background-color 0.3s;
+            &:hover {
+                background-color: rgba($color: #fff, $alpha: .10);
+            }
+
+        }
+        .active-link {
+            background-color: rgba($color: #fff, $alpha: .10);
+            border: 1px solid rgba($color: #fff, $alpha: .20);
+        }
+        
+    }
+}
