@@ -1,4 +1,13 @@
-html, body{
+:root {
+    --primary-color: #004990;
+    --secondary-color: rgb(221.25, 221.25, 221.25);
+    --success-color: #28a745;
+    --info-color: #17a2b8;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+}
+
+html, body {
     font-family: 'Roboto', sans-serif;
     background-color: #eaeaea;
     color: #2a2929;
@@ -23,4 +32,23 @@ a {
 main {
     flex: 1;
     padding: 1rem;
+}
+.text-center {
+    text-align: center;
+}
+
+.custom-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.is-invalid {
+    color: var(--danger-color);
+}
+.is-valid {
+    color: var(--success-color);
 }

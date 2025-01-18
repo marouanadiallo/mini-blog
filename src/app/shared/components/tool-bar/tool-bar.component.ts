@@ -5,7 +5,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   selector: 'mb-tool-bar',
   imports: [
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
   ],
   templateUrl: './tool-bar.component.html',
   styleUrl: './tool-bar.component.scss',

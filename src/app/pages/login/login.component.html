@@ -1,1 +1,24 @@
-<p>login works!</p>
+<div class="login-container">
+    <div class="login-content">
+        <h1 class="text-center">Se connecter</h1>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-field-column">
+                <label for="email">Adresse électronique</label>
+                <input type="email" formControlName="email" id="email" placeholder="xyz@dmain.com">
+            </div>
+            <div class="form-field-column">
+                <label for="password">Mot de passe</label>
+                <input type="password" formControlName="password" id="password">
+            </div>
+            <div class="form-field-column">
+                <input type="date" name="dateT" id="dateT" formControlName="date">
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="submit-button">
+                    Connexion
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
