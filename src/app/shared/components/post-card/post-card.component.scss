@@ -1,0 +1,26 @@
+:host {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.post-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+    padding: 1rem 1.5rem;
+    max-width: 600px;
+    min-height: 250px;
+}
+.card-body {
+    flex: 1;
+}
+.card-footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    align-self: flex-end;
+}

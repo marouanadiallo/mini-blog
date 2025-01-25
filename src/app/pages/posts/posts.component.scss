@@ -1,0 +1,11 @@
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.posts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(600px, 1fr));
+    grid-auto-rows: 1fr;
+    gap: .5rem;
+}

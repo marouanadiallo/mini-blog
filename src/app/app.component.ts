@@ -1,14 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ToolBarComponent } from './shared/components/tool-bar/tool-bar.component';
-import { FooterComponent } from './shared/components/footer/footer.component';
+
+import { LayoutModule } from './shared/components/layout.module';
 
 @Component({
   selector: 'mb-root',
   imports: [
     RouterOutlet,
-    FooterComponent,
-    ToolBarComponent,
+    LayoutModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

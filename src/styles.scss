@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 :root {
     --primary-color: #004990;
     --secondary-color: rgb(221.25, 221.25, 221.25);
@@ -46,9 +48,44 @@ main {
     }
 }
 
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .is-invalid {
     color: var(--danger-color);
 }
 .is-valid {
     color: var(--success-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: #2a2929;
+    &:hover {
+        background-color: color.scale(#d9d9d9, $blackness: 10%);
+    }
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+    &:hover {
+        background-color: color.scale(#004990, $blackness: 10%);
+    }
 }

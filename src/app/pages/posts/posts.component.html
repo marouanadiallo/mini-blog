@@ -1,1 +1,11 @@
-<p>posts works!</p>
+@let posts = (posts$ | async) || [];
+<div class="posts-container">
+    <div class="posts">
+        @for (post of posts; track post.id) {
+            <mb-post-card [post]="post"
+                (editEvent)="editPost($event)"
+                (readMoreEvent)="readMore($event)"
+            ></mb-post-card>
+        }
+    </div>
+</div>
