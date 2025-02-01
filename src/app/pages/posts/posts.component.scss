@@ -3,9 +3,44 @@
     flex-direction: column;
     align-items: center;
 }
-.posts {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(600px, 1fr));
-    grid-auto-rows: 1fr;
+
+#posts {
+    border-collapse: collapse;
+    width: 100%;
+    position: relative;
+}
+  
+#posts td, #posts th {
+    border: 1px solid var(--secondary-color);
+    padding: 8px;
+}
+  
+#posts tr:nth-child(even){background-color: #f2f2f2;}
+
+#posts tr:hover {
+    background-color: var(--secondary-color)
+}
+
+#posts th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--primary-color);
+    color: white; 
+}
+
+.no-posts {
+    position: absolute;
+    left: 50%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
     gap: .5rem;
+    margin-top: 10px;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
 }

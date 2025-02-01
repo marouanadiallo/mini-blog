@@ -12,13 +12,8 @@ export class PostCardComponent {
   post = input.required<Post>();
 
   readMoreEvent = output<number>();
-  editEvent = output<number>();
 
   onReadMore() {
     this.readMoreEvent.emit(this.post().id);
-  }
-
-  onEdit() {
-    this.editEvent.emit(this.post().id);
   }
 }

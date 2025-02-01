@@ -6,7 +6,7 @@
     --success-color: #28a745;
     --info-color: #17a2b8;
     --warning-color: #ffc107;
-    --danger-color: #dc3545;
+    --danger-color: #a53d47;
 }
 
 html, body {
@@ -88,4 +88,27 @@ main {
     &:hover {
         background-color: color.scale(#004990, $blackness: 10%);
     }
+}
+.btn-danger {
+    background-color: var(--danger-color);
+    color: #fff;
+    &:hover {
+        background-color: color.scale(#dc3545, $blackness: 10%);
+    }
+}
+
+.btn-info {
+    background-color: var(--info-color);
+    color: #fff;
+    &:hover {
+        background-color: color.scale(#17a2b8, $blackness: 10%);
+    }
+}
+
+.page-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
 }

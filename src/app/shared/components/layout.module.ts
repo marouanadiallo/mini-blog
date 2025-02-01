@@ -11,6 +11,6 @@ const components = [
   declarations: [],
   imports: [...components],
   exports: [...components],
-  providers: [] //TODO: what is this?
+  providers: [],
 })
 export class LayoutModule { }

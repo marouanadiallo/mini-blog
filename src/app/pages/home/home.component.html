@@ -1,5 +1,15 @@
-<div>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat autem beatae aspernatur sequi molestias voluptas facilis mollitia accusamus accusantium numquam, quia dolorum, excepturi obcaecati, veritatis adipisci ab magni magnam omnis?
-    </p>
+@let posts = (posts$ | async) || [];
+<div class="posts-container">
+    <div class="posts">
+        @for (post of posts; track post.id) {
+            <mb-post-card [post]="post"
+                (readMoreEvent)="readMore($event)"
+            ></mb-post-card>
+        } @empty {
+            <div class="no-posts">
+                <mb-spinner></mb-spinner>
+                <p>Chargement des posts ...</p>
+            </div>
+        }
+    </div>
 </div>

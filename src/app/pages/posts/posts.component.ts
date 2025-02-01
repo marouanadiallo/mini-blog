@@ -1,15 +1,19 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { 
+  ChangeDetectionStrategy, 
+  Component, 
+  inject 
+} from '@angular/core';
 
 import { PostService } from './post.service';
-import { PostCardComponent } from '../../shared/components/post-card/post-card.component';
 import { AsyncPipe } from '@angular/common';
+import { SpinnerComponent } from '../../shared/components/spinner/spinner.component';
 
 
 @Component({
   selector: 'mb-posts',
   imports: [
     AsyncPipe,
-    PostCardComponent
+    SpinnerComponent
   ],
   templateUrl: './posts.component.html',
   styleUrl: './posts.component.scss',
@@ -20,11 +24,15 @@ export class PostsComponent {
 
   posts$ = this._postService.getPosts();
 
-  editPost(postId: number) {
-    confirm(`Editing post with id: ${postId}`);
+  addPost() {
+    alert('Add post');
   }
 
-  readMore(postId: number) {
-    confirm(`Reading more about post with id: ${postId}`);
+  editPost(id: number) {
+    alert(`Edit post ${id}`);
+  }
+
+  deletePost(id: number) {
+    alert(`Delete post ${id}`);
   }
 }

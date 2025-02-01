@@ -10,7 +10,9 @@ export class PostService {
   #api = 'https://jsonplaceholder.typicode.com/posts';
   #httpClient = inject(HttpClient);
 
-  constructor() { }
+  constructor() { 
+    console.log('PostService created');
+  }
 
   getPosts(page: number = 10): Observable<Post[]> {
     let params = new HttpParams();

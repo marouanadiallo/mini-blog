@@ -1,11 +1,34 @@
 @let posts = (posts$ | async) || [];
+
 <div class="posts-container">
-    <div class="posts">
-        @for (post of posts; track post.id) {
-            <mb-post-card [post]="post"
-                (editEvent)="editPost($event)"
-                (readMoreEvent)="readMore($event)"
-            ></mb-post-card>
-        }
+    <div class="page-header" >
+        <h1>Tableau de bord - Gestion des posts</h1>
+        <button class="btn btn-primary" (click)="addPost()">Ajouter un post</button>
     </div>
+    <table id="posts">
+        <tr>
+            <th>Identifiant</th>
+            <th>Titre</th>
+            <th>Contenu</th>
+            <th></th>
+        </tr>
+        @for (post of posts; track post.id) {
+            <tr>
+                <td>{{ post.id }}</td>
+                <td>{{ post.title }}</td>
+                <td>{{ post.body }}</td>
+                <td class="actions">
+                    <button class="btn btn-info" (click)="editPost(post.id)">Editer</button>
+                    <button class="btn btn-danger" (click)="deletePost(post.id)">Supprimer</button>
+                </td>
+            </tr>
+        } @empty {
+            <tr>
+                <td colspan="3" class="no-posts">
+                    <mb-spinner #spinner></mb-spinner>
+                    <p>Chargement des posts ...</p>
+                </td>
+            </tr>
+        }
+    </table>
 </div>
