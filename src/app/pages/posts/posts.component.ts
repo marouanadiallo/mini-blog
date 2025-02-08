@@ -1,38 +1,13 @@
 import { 
   ChangeDetectionStrategy, 
-  Component, 
-  inject 
+  Component
 } from '@angular/core';
-
-import { PostService } from './post.service';
-import { AsyncPipe } from '@angular/common';
-import { SpinnerComponent } from '../../shared/components/spinner/spinner.component';
-
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'mb-posts',
-  imports: [
-    AsyncPipe,
-    SpinnerComponent
-  ],
-  templateUrl: './posts.component.html',
-  styleUrl: './posts.component.scss',
+  imports: [RouterOutlet],
+  template: '<router-outlet></router-outlet>',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PostsComponent {
-  private readonly _postService = inject(PostService);
-
-  posts$ = this._postService.getPosts();
-
-  addPost() {
-    alert('Add post');
-  }
-
-  editPost(id: number) {
-    alert(`Edit post ${id}`);
-  }
-
-  deletePost(id: number) {
-    alert(`Delete post ${id}`);
-  }
-}
+export class PostsComponent {}

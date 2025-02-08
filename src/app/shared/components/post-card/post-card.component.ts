@@ -1,5 +1,11 @@
-import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
+import { 
+  ChangeDetectionStrategy, 
+  Component, 
+  input, 
+  output 
+} from '@angular/core';
 import { Post } from '../../../core';
+
 
 @Component({
   selector: 'mb-post-card',

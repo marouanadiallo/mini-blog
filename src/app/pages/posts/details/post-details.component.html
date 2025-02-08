@@ -1,0 +1,10 @@
+@if (post$ |async; as post) {
+    <div class="post-details">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.body }}</p>
+    </div>
+} @else {
+    <div class="no-post">
+        <p>Chargement du post ...</p>
+    </div>
+}

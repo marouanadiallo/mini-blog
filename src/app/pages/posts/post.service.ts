@@ -1,8 +1,8 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 
 import { Post } from '../../core';
-import { Observable } from 'rxjs';
+import { delay, Observable } from 'rxjs';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class PostService {
@@ -19,5 +19,9 @@ export class PostService {
     params = params.append('_limit', '10');
     params = params.append('_page', page);
     return this.#httpClient.get<Post[]>(`${this.#api }`, { params: params });
+  }
+
+  getPost(id: number): Observable<Post> {
+    return this.#httpClient.get<Post>(`${this.#api }/${id}`).pipe(delay(5000));
   }
 }

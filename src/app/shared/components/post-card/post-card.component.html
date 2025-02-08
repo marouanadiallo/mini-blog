@@ -8,6 +8,9 @@
     </div>
 
     <div class="card-footer">
-        <button class="btn btn-secondary" (click)="onReadMore()">Lire</button>
+       <button class="btn btn-secondary" (click)="onReadMore()">Lire</button> 
+        <!-- Not good place
+            <button class="btn btn-secondary" [routerLink]="['/posts', post().id, 'details']">Lire</button>
+        -->
     </div>
 </div>
