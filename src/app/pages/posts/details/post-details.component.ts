@@ -33,5 +33,4 @@ export class PostDetailsComponent implements OnInit {
   ngOnInit(): void {
    
   }
-
 }

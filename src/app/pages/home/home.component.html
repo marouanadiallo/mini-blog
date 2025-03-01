@@ -1,10 +1,12 @@
 @let posts = (posts$ | async) || [];
-<div class="posts-container">
+<div class="posts-container" #postsContainer>
     <div class="posts">
         @for (post of posts; track post.id) {
             <mb-post-card [post]="post"
                 (readMoreEvent)="readMore($event)"
-            ></mb-post-card>
+            >
+                <button class="btn btn-secondary">supprimer</button>
+            </mb-post-card>
         } @empty {
             <div class="no-posts">
                 <mb-spinner></mb-spinner>

@@ -1,6 +1,9 @@
 import { 
+  AfterContentInit,
   ChangeDetectionStrategy, 
   Component, 
+  contentChild, 
+  ElementRef, 
   input, 
   output 
 } from '@angular/core';
@@ -14,12 +17,19 @@ import { Post } from '../../../core';
   styleUrl: './post-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PostCardComponent {
+export class PostCardComponent implements AfterContentInit {
   post = input.required<Post>();
 
   readMoreEvent = output<number>();
 
+  //@ContentChild('btn') content: ElementRef;
+  content = contentChild<ElementRef>('btn');
+
   onReadMore() {
     this.readMoreEvent.emit(this.post().id);
+  }
+
+  ngAfterContentInit() {
+    console.log('PostCardComponent => content initialized', { content: this.content() });
   }
 }
